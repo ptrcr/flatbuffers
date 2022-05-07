@@ -2643,7 +2643,7 @@ inline int LookupEnum(const char **names, const char *name) {
   #define FLATBUFFERS_STRUCT_END(name, size) \
     __pragma(pack()) \
     static_assert(sizeof(name) == size, "compiler breaks packing rules")
-#elif defined(__GNUC__) || defined(__clang__) || defined(__ICCARM__)
+#elif defined(__GNUC__) || defined(__clang__) || defined(__ICCARM__) || defined(__TI_CCS_compiler__)
   #define FLATBUFFERS_MANUALLY_ALIGNED_STRUCT(alignment) \
     _Pragma("pack(1)") \
     struct __attribute__((aligned(alignment)))
